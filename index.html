@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>fitness__freak</title>
+</head>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<style>
+   body {
+      font-family: 'Anton', sans-serif;
+      text-align: center;
+   }
+
+   h1 {
+      font-size: 60px;
+      font-weight: 700;
+   }
+
+   p {
+      font-size: 28px;
+   }
+</style>
+<link rel="stylesheet" href="css/style.css">
+<style>
+   /*css reset*/
+   body {
+      color: white;
+      margin: 0px;
+      padding: 0px;
+      background: url('background/background.jpg');
+      background-size: cover;
+      /* Cover the entire screen */
+      background-repeat: no-repeat;
+      /* Prevent repetition */
+   }
+
+   .left {
+      display: inline-block;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+   }
+
+   .left img {
+      width: 88px;
+   }
+
+   .mid {
+      display: block;
+      width: 40%;
+      margin: 18px auto;
+   }
+
+   .right {
+      position: absolute;
+      right: 104px;
+      top: 10px;
+      display: inline-block;
+   }
+
+   .right img {
+      width: 80px;
+      background-color: black;
+      cursor: pointer;
+   }
+
+   .right img:hover {
+      transition: 0.5s;
+      transform: scale(1.25);
+   }
+
+   .navbar {
+      display: inline-block;
+   }
+
+   .navbar li {
+      display: inline-block;
+      font-size: 15px;
+   }
+
+   .navbar li a {
+      color: white;
+      text-decoration: none;
+      padding: 45px 18px;
+      border-radius: 20px;
+      text-align: center;
+
+   }
+
+   .navbar li a:hover,
+   .navbar li a:active {
+      text-decoration: underline;
+      color: white;
+   }
+
+   .container {
+      margin: 251px 842px;
+      padding: 70px 18px;
+      width: 17%;
+      border-radius: 13px;
+   }
+
+   .form-group input {
+      display: block;
+      width: 185px;
+      padding: 6px;
+      border: 2px solid black;
+      margin: 6px auto;
+      border-radius: 40px;
+   }
+
+   .container button {
+      border-radius: 30px;
+   }
+</style>
+
+<body>
+   <header class="header">
+      <div class="left">
+
+         <div class="left">
+            <img src="background\fitnessfreak__2_-removebg-preview (1).png" alt="">
+         </div>
+      </div>
+      <div class="mid">
+
+         <ul class="navbar">
+            <li><a href="fitnessfreak.html">Home</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="suppliment.html">Suppliments</a></li>
+            <li><a href="subscription.html">Subscription</a></li>
+
+         </ul>
+      </div>
+      <div class="right">
+
+         <div class="left">
+            <img src="background\cart icon.png" alt="">
+         </div>
+      </div>
+   </header>
+   <div class="container">
+      <h5>JOIN THE BEST GYM AT KHANNA</h5>
+      <form action="register.php" method="POST">
+         <input type="text" name="name" placeholder="Enter your name" required>
+         <input type="number" name="age" placeholder="Enter your age" required>
+         <input type="text" name="gender" placeholder="Enter your gender" required>
+         <input type="text" name="contact" placeholder="Enter your contact no." required>
+         <button type="submit">Submit</button>
+      </form>
+      <script src="script.js"></script>
+</body>
+
+</html>

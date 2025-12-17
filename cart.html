@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #040016, #241102);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #cart-items {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #cart-items div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #cart-items div:last-child {
+            border-bottom: none;
+        }
+
+        #cart-items img {
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #141312;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="clearCart()">Clear Cart</button>
+    </div>
+
+    <script>
+        let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+        let cartContainer = document.getElementById("cart-items");
+
+        function displayCart() {
+            cartContainer.innerHTML = "";
+            cartItems.forEach((item, index) => {
+                cartContainer.innerHTML += `
+                    <div>
+                        <img src="${item.image}" width="50">
+                        <span>${item.name} - ₹${item.price}</span>
+                        <button onclick="removeItem(${index})">Remove</button>
+                    </div>
+                `;
+            });
+        }
+
+        function removeItem(index) {
+            cartItems.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+            displayCart();
+        }
+
+        function clearCart() {
+            localStorage.removeItem("cart");
+            cartItems = [];
+            displayCart();
+        }
+
+        displayCart();
+    </script>
+</body>
+
+</html>

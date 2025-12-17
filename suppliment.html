@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplements</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Syne:wght@400..800&family=Tektur:wght@400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="background\fitnessfreak__2_-removebg-preview (1).png" alt="Fitness Freak Logo"
+                        width="225px">
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="fitnessfreak.html">Home</a></li>
+                        <li><a href="aboutus.html">About us</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                        <li><a href="supplements.html">Supplements</a></li>
+                    </ul>
+                </nav>
+                <div id="cart-icon" class="cart-icon">
+                    <a href="cart.html">
+                        <img src="background/cart icon.png" alt="Cart" width="50px">
+                        <span id="cart-count">(0)</span>
+                        <span id="cart-total">₹0</span>
+                    </a>
+                    <span id="cart-count">(0)</span>
+                    <span id="cart-total">₹0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="categories">
+        <div class="small-container">
+            <h2 class="section-title">Featured Categories</h2>
+            <div class="row">
+                <div class="col-3" onclick="addToCart('Creatine', 500)">
+                    <img src="background/CREATINE_MONOHYDRATE-removebg-preview.png" alt="Creatine">
+                    <h3 class="fresh">Creatine - ₹500</h3>
+                </div>
+                <div class="col-3" onclick="addToCart('Oats', 300)">
+                    <img src="background/chocolate_oats-removebg-preview.png" alt="Oats">
+                    <h3 class="fresh">Oats - ₹300</h3>
+                </div>
+                <div class="col-3" onclick="addToCart('Shilajit', 400)">
+                    <img src="background\Shilajit_Pure_Himalayan_30_Grams_Natural_Organic_Shilajit-removebg-preview.png"
+                        alt="Shilajit">
+                    <h3 class="fresh">Shilajit - ₹400</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartCount = document.getElementById("cart-count");
+            const cartTotal = document.getElementById("cart-total");
+            cartCount.innerText = `(${cart.length})`;
+            const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+            cartTotal.innerText = `₹${totalPrice}`;
+        }
+
+        document.addEventListener("DOMContentLoaded", updateCartDisplay);
+    </script>
+
+    </a>
+</body>
+
+</html>

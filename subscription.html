@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Plans</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .plans {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .plan {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: darkred;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            background-color: #444;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-btn:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="fitnessfreak.html" class="back-btn">← Back to Home</a>
+        <h1>Choose Your Subscription Plan</h1>
+        <div class="plans">
+            <div class="plan">
+                <h2>Basic Plan</h2>
+                <p>₹500/month</p>
+                <ul>
+                    <li>Access to gym</li>
+                    <li>Free water bottle</li>
+                    <li>No personal trainer</li>
+                </ul>
+                <a href="subscribe.php?plan=basic" class="btn">Subscribe Now</a>
+            </div>
+
+            <div class="plan">
+                <h2>Standard Plan</h2>
+                <p>₹1000/month</p>
+                <ul>
+                    <li>Access to gym</li>
+                    <li>Free supplements</li>
+                    <li>Personal trainer (2 sessions/month)</li>
+                </ul>
+                <a href="subscribe.php?plan=standard" class="btn">Subscribe Now</a>
+            </div>
+
+            <div class="plan">
+                <h2>Premium Plan</h2>
+                <p>₹2000/month</p>
+                <ul>
+                    <li>All Standard Plan benefits</li>
+                    <li>Unlimited trainer sessions</li>
+                    <li>Diet consultation</li>
+                </ul>
+                <a href="subscribe.php?plan=premium" class="btn">Subscribe Now</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
